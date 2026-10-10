@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f7f8fa">
+
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<title>順番決め</title>
+
+<link rel="stylesheet" href="junban.css">
+
+</head>
+
+<body>
+
+<main class="app">
+
+  <section class="card">
+
+    <!-- =========================
+         設定画面
+         ========================= -->
+
+    <div id="setupView">
+
+      <div class="hero">
+
+        <div class="circle">
+
+          <div style="text-align:center;">
+
+            <div style="font-size:20px;color:#666;margin-bottom:8px;">
+              順番を決める
+            </div>
+
+            <div style="font-size:48px;font-weight:700;">
+              人数
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="setup">
+
+        <h1 class="setup-title">
+          順番を決めたい人数
+        </h1>
+
+        <div class="count-row">
+
+          <input
+            id="countRange"
+            type="range"
+            min="2"
+            max="20"
+            value="8"
+            aria-label="人数"
+          >
+
+          <input
+            id="countInput"
+            class="count-number"
+            type="number"
+            min="2"
+            max="20"
+            value="8"
+            aria-label="人数"
+          >
+
+          <span style="font-size:24px;">
+            人
+          </span>
+
+        </div>
+
+        <button id="startGame" class="start-game">
+          順番決めを開始
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         順番決め画面
+         ========================= -->
+
+    <div
+      id="gameView"
+      class="hidden"
+      style="display:flex;flex-direction:column;flex:1;"
+    >
+
+      <div class="hero">
+
+        <div class="game-content">
+
+          <!-- タップして確認 -->
+
+          <div id="tapArea" class="circle">
+
+            <button id="tapButton" class="start-button">
+              タップして確認
+            </button>
+
+          </div>
+
+
+          <!-- 数字 -->
+
+          <div id="resultArea" class="hidden reveal-circle">
+
+            <span id="resultNumber" class="number">
+              1
+            </span>
+
+          </div>
+
+
+          <!-- 次の人へ -->
+
+          <button id="nextButton" class="next-button">
+            次の人へ
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           統計
+           ========================= -->
+
+      <div class="stats">
+
+        <div class="stat">
+
+          <div class="stat-label">
+            全体人数
+          </div>
+
+          <div id="total" class="stat-value">
+            8人
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            確認済み
+          </div>
+
+          <div id="confirmed" class="stat-value">
+            0人
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            残り人数
+          </div>
+
+          <div id="remaining" class="stat-value">
+            8人
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           最初からやり直す
+           ========================= -->
+
+      <div class="setup">
+
+        <button id="resetButton" class="reset">
+          ↻　最初からやり直す
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         完了画面
+         ========================= -->
+
+    <div
+      id="completeView"
+      class="hidden"
+      style="display:flex;flex-direction:column;flex:1;"
+    >
+
+      <div class="hero">
+
+        <div class="circle">
+
+          <div class="complete-message">
+            全員の順番が<br>
+            決まりました！
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="setup">
+
+        <button id="restartButton" class="start-game">
+          最初からやり直す
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="junban.js" defer></script>
+
+</body>
+</html>
